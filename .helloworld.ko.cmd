@@ -1,1 +1,0 @@
-cmd_/home/dyc/program/ldd/HelloWorld.ko := ld -r -m elf_i386 -T /linux-2.6.38.8/linux-2.6.38.8/scripts/module-common.lds --build-id  -o /home/dyc/program/ldd/HelloWorld.ko /home/dyc/program/ldd/HelloWorld.o /home/dyc/program/ldd/HelloWorld.mod.o
