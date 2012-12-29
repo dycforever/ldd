@@ -1,0 +1,38 @@
+Module                  Size  Used by
+helloworld               602  0 
+fuse                   53869  3 
+sunrpc                163881  1 
+ip6t_REJECT             3278  2 
+nf_conntrack_ipv6       6373  2 
+nf_defrag_ipv6          7489  1 nf_conntrack_ipv6
+ip6table_filter         1211  1 
+ip6_tables              9779  1 ip6table_filter
+ipv6                  234826  27 ip6t_REJECT,nf_conntrack_ipv6,nf_defrag_ipv6
+uinput                  5386  0 
+snd_ens1371            15930  2 
+gameport                7035  1 snd_ens1371
+snd_rawmidi            16363  1 snd_ens1371
+snd_ac97_codec         89699  1 snd_ens1371
+ac97_bus                 930  1 snd_ac97_codec
+snd_seq                43001  0 
+snd_seq_device          4962  2 snd_rawmidi,snd_seq
+snd_pcm                61911  2 snd_ens1371,snd_ac97_codec
+pcnet32                23813  0 
+snd_timer              15140  2 snd_seq,snd_pcm
+ppdev                   6288  0 
+parport_pc             17755  0 
+snd                    46761  11 snd_ens1371,snd_rawmidi,snd_ac97_codec,snd_seq,snd_seq_device,snd_pcm,snd_timer
+parport                25647  2 ppdev,parport_pc
+soundcore               4909  1 snd
+snd_page_alloc          6052  1 snd_pcm
+floppy                 46572  0 
+mii                     3554  1 pcnet32
+microcode              11349  0 
+vmw_balloon             5032  0 
+i2c_piix4               8902  0 
+i2c_core               20621  1 i2c_piix4
+pcspkr                  1406  0 
+mptspi                 12265  2 
+mptscsih               24935  1 mptspi
+mptbase                69265  2 mptspi,mptscsih
+scsi_transport_spi     17116  1 mptspi
