@@ -36,11 +36,11 @@
  * Our parameters which can be set at load time.
  */
 
-int scull_major =   SCULL_MAJOR;
+int scull_major =   SCULL_MAJOR; //0
 int scull_minor =   0;
-int scull_nr_devs = SCULL_NR_DEVS;	/* number of bare scull devices */
-int scull_quantum = SCULL_QUANTUM;
-int scull_qset =    SCULL_QSET;
+int scull_nr_devs = SCULL_NR_DEVS;	/* 4 number of bare scull devices */
+int scull_quantum = SCULL_QUANTUM;  // 4000
+int scull_qset =    SCULL_QSET;  //1000
 
 /*
  * 模块参数，可在模块转载时赋值，很灵活方便；
@@ -76,6 +76,7 @@ int scull_trim(struct scull_dev *dev)
 	int qset = dev->qset;   /* "dev" is not-null */
 	int i;
 
+    //遍历dev中，data链表中的所有scull_qset链表
 	for (dptr = dev->data; dptr; dptr = next) { /* all the list items */
 		if (dptr->data) {
 			for (i = 0; i < qset; i++)
@@ -88,7 +89,7 @@ int scull_trim(struct scull_dev *dev)
 	}
 	dev->size = 0;
 	dev->quantum = scull_quantum;
-	dev->qset = scull_qset;
+	dev->qset = scull_qset; //这个是模块参数，一个int
 	dev->data = NULL;
 	return 0;
 }
@@ -99,7 +100,10 @@ int scull_trim(struct scull_dev *dev)
 /*
  * The proc filesystem: function to read and entry
  */
-
+//这个函数只使用了buf count eof data四个参数
+//第一个循环遍历scull_devices数组中的所有元素
+//第二个循环遍历每一个scull_qset
+//第三个循环遍历每个scull_qset中的每一个数组元素,打印信息
 int scull_read_procmem(char *buf, char **start, off_t offset,
                    int count, int *eof, void *data)
 {

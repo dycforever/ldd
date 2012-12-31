@@ -81,6 +81,8 @@
  * 一个链表项
  */
 struct scull_qset {
+    //data表示一个数组的首地址，数组中的每一个元素都是一个指针
+    //数组中元素的个数就是qset中的个数
 	void **data;
 	struct scull_qset *next;	/* 下一个链表节点（链表项） */
 };
