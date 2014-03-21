@@ -1,0 +1,4 @@
+#!/bin/sh
+
+/sbin/rmmod proclog || exit 1
+

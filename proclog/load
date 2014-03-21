@@ -1,0 +1,3 @@
+#!/bin/sh
+
+/sbin/insmod ./proclog.ko $* || exit 1

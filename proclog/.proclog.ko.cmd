@@ -1,0 +1,1 @@
+cmd_/home/dyc/program/ldd/proclog/proclog.ko := ld -r -m elf_x86_64  --build-id -o /home/dyc/program/ldd/proclog/proclog.ko /home/dyc/program/ldd/proclog/proclog.o /home/dyc/program/ldd/proclog/proclog.mod.o
